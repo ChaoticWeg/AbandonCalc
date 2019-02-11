@@ -56,10 +56,13 @@ export default class App extends React.Component {
 
   render() {
     StatusBar.setBarStyle('light-content', true);
+
     return (
       <View style={styles.container}>
 
-        <Text style={styles.title}>AbandonCalc</Text>
+        <Text style={styles.title}>
+          Abandonment Calculator
+        </Text>
         
         <StartDate
           style={styles.dateRow}
@@ -103,8 +106,7 @@ const styles = StyleSheet.create({
   title: {
     color: '#fff',
     fontFamily: 'Helvetica',
-    fontWeight: 'bold',
-    fontSize: 30,
+    fontSize: 28,
     marginBottom: 30
   },
   dateRow: {

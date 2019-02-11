@@ -20,7 +20,6 @@ export default class App extends React.Component {
     this.setDatePickerVisibility = this.setDatePickerVisibility.bind(this);
     this.showDatePicker = this.showDatePicker.bind(this);
     this.hideDatePicker = this.hideDatePicker.bind(this);
-    this.isDatePickerVisible = this.isDatePickerVisible.bind(this);
 
     this.handleDatePicked = this.handleDatePicked.bind(this);
 
@@ -50,10 +49,6 @@ export default class App extends React.Component {
     let previousState = new Object(this.state);
     previousState.isDatePickerVisible = visible;
     this.setState(previousState);
-  }
-
-  isDatePickerVisible() {
-    return this.state.isDatePickerVisible;
   }
 
   showDatePicker() { this.setDatePickerVisibility(true); }

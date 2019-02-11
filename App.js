@@ -8,8 +8,7 @@ export default class App extends React.Component {
   state = {
     isDatePickerVisible: false,
     startDate: null,
-    endDate: null,
-    localeCode: 'en-US'
+    endDate: null
   }
 
   constructor(props) {

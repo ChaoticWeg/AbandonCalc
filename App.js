@@ -47,7 +47,6 @@ export default class App extends React.Component {
   }
 
   setDatePickerVisibility(visible) {
-    console.log('setting date picker visibility to', visible);
     let previousState = new Object(this.state);
     previousState.isDatePickerVisible = visible;
     this.setState(previousState);

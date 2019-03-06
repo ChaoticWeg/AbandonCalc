@@ -13,8 +13,7 @@ export default class DatePickerToggleButton extends React.Component {
             <Button
                 buttonStyle={styles.button}
                 titleStyle={styles.buttonTitle}
-                title="Select"
-                color="#ddd"
+                title="Set Closed Date"
                 onPress={this.props.onToggle}
                 icon={
                     <Icon
@@ -22,7 +21,6 @@ export default class DatePickerToggleButton extends React.Component {
                         type="font-awesome"
                         size={15}
                         color="#fff"
-                        underlayColor="#000"
                     />
                 }
             />
@@ -33,7 +31,8 @@ export default class DatePickerToggleButton extends React.Component {
 const styles = StyleSheet.create({
     button: {
         marginTop: 20,
-        padding: 10
+        padding: 10,
+        backgroundColor: "#e37222"
     },
     buttonTitle: {
         marginLeft: 10

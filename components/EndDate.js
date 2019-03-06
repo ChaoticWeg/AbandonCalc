@@ -1,7 +1,9 @@
 import * as React from 'react';
 
-import { StyleSheet, View, Text } from 'react-native';
+import { View, Text } from 'react-native';
 import { Icon } from 'react-native-elements';
+
+import styles from "../styles/IconTextRow";
 
 export default class EndDate extends React.Component {
     constructor(props) {
@@ -23,16 +25,3 @@ export default class EndDate extends React.Component {
         );
     }
 }
-
-const styles = StyleSheet.create({
-    iconText: {
-        flexDirection: 'row',
-        alignItems: 'center'
-    },
-    label: {
-        color: '#fff',
-        fontFamily: 'Helvetica',
-        fontSize: 20,
-        marginLeft: 10
-    }
-});

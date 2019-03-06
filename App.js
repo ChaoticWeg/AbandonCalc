@@ -1,13 +1,15 @@
 import React from 'react';
 import { StyleSheet, Text, View, StatusBar } from 'react-native';
 
+import DatePickerToggleButton from './components/DatePickerToggleButton';
 import DateTimePicker from 'react-native-modal-datetime-picker';
-import { StartDate, EndDate, DatePickerToggleButton } from './components';
+import DateRow from './components/DateRow';
 
 export default class App extends React.Component {
   state = {
     isDatePickerVisible: false,
     startDate: null,
+    letterDate: null,
     endDate: null
   }
 
@@ -24,10 +26,11 @@ export default class App extends React.Component {
     this.handleDatePicked = this.handleDatePicked.bind(this);
 
     this.state.startDate = new Date();
-    this.state.endDate = this.addDays(this.state.startDate);
+    this.state.letterDate = this.addDays(this.state.startDate, 30);
+    this.state.endDate = this.addDays(this.state.letterDate, 60);
   }
 
-  addDays(date, numDays = 120) {
+  addDays(date, numDays) {
     var result = new Date(date);
     result.setDate(result.getDate() + numDays);
     return result;
@@ -36,7 +39,8 @@ export default class App extends React.Component {
   changeStartDate(date) {
     let previousState = new Object(this.state);
     previousState.startDate = date;
-    previousState.endDate = this.addDays(date);
+    previousState.letterDate = this.addDays(date, 30);
+    previousState.endDate = this.addDays(previousState.letterDate, 60);
     this.setState(previousState);
   }
 
@@ -64,13 +68,21 @@ export default class App extends React.Component {
           Abandonment Calculator
         </Text>
         
-        <StartDate
-          style={styles.dateRow}
+        <DateRow
+          iconName="check"
+          iconType="font-awesome"
           date={this.state.startDate}
         />
 
-        <EndDate
-          style={styles.dateRow}
+        <DateRow
+          iconName="envelope"
+          iconType="font-awesome"
+          date={this.state.letterDate}
+        />
+
+        <DateRow
+          iconName="sign-out"
+          iconType="font-awesome"
           date={this.state.endDate}
         />
         
@@ -108,8 +120,5 @@ const styles = StyleSheet.create({
     fontFamily: 'Helvetica',
     fontSize: 28,
     marginBottom: 30
-  },
-  dateRow: {
-    paddingBottom: 10
   }
 });

@@ -1,11 +1,10 @@
-import * as React from 'react';
+import React from "react";
 
-import { View, Text } from 'react-native';
-import { Icon } from 'react-native-elements';
-
+import { View, Text } from "react-native";
+import { Icon } from "react-native-elements";
 import styles from "../styles/IconTextRow";
 
-export default class EndDate extends React.Component {
+export default class DateRow extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -14,8 +13,9 @@ export default class EndDate extends React.Component {
         return (
             <View style={[styles.iconText, this.props.style]}>
                 <Icon
-                    name="trash-o"
-                    type="font-awesome"
+                    iconStyle={styles.icon}
+                    name={this.props.iconName}
+                    type={this.props.iconType}
                     size={20}
                     color="#ddd"
                     underlayColor="#000"

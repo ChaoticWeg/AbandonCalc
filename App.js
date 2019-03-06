@@ -69,7 +69,7 @@ export default class App extends React.Component {
         </Text>
         
         <DateRow
-          iconName="check"
+          iconName="folder"
           iconType="font-awesome"
           date={this.state.startDate}
         />
@@ -81,7 +81,7 @@ export default class App extends React.Component {
         />
 
         <DateRow
-          iconName="sign-out"
+          iconName="recycle"
           iconType="font-awesome"
           date={this.state.endDate}
         />
@@ -106,7 +106,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 50,
-    backgroundColor: '#252526',
+    backgroundColor: '#1a1a1a',
     alignItems: 'stretch',
     justifyContent: 'center'
   },
